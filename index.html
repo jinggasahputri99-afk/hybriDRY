@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HybriDRY – Pengering Gabah Hibrida Surya &amp; Sekam Padi</title>
+<meta name="description" content="HybriDRY: pengering gabah hibrida berbasis tenaga surya dan biomassa sekam padi dengan deteksi kadar air otomatis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#atas">Hybri<b>DRY</b></a>
+    <nav aria-label="Navigasi utama">
+      <ul>
+        <li><a href="#masalah">Masalah</a></li>
+        <li><a href="#cara-kerja">Cara kerja</a></li>
+        <li><a href="#simulasi">Simulasi</a></li>
+        <li><a href="#keunggulan">Keunggulan</a></li>
+        <li><a href="#spesifikasi">Spesifikasi</a></li>
+        <li><a href="#komponen">Komponen</a></li>
+        <li><a href="#mitra">Mitra</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="atas">
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Gabah kering, panen aman, tanpa bergantung cuaca.
+        <span>Inovasi pengering gabah hibrida berbasis tenaga surya dan biomassa sekam padi dengan deteksi kadar air otomatis.</span>
+      </h1>
+      <p>Cerah, panas matahari jadi sumber utama. Mendung, tungku sekam padi menggantikan. Sensor menjaga suhu dan kadar air gabah tetap pada target.</p>
+      <div class="btns">
+        <a class="btn primary" href="#cara-kerja">Lihat cara kerja</a>
+        <a class="btn ghost" href="#spesifikasi">Spesifikasi prototype</a>
+      </div>
+    </div>
+
+    <figure class="stage">
+      <svg viewBox="0 0 640 360" role="img" aria-label="Ilustrasi alat HybriDRY: kolektor surya, ruang pengering, blower, dan tungku sekam">
+        <rect width="640" height="360" rx="18" fill="#1b5a3d" opacity=".35"/>
+        <circle cx="70" cy="60" r="26" fill="#f2b632"/>
+        <g stroke="#f2b632" stroke-width="4" stroke-linecap="round">
+          <path d="M70 18v-8M70 110v-8M28 60h-8M120 60h-8M40 30l-6-6M100 90l6 6M100 30l6-6M40 90l-6 6"/>
+        </g>
+        <path d="M0 320h640" stroke="#8fc58a" stroke-width="3"/>
+        <!-- solar collector -->
+        <path d="M30 195 L270 255 L270 275 L30 215Z" fill="#1f4aa8"/>
+        <path d="M30 195 L270 255" stroke="#9db8f0" stroke-width="3"/>
+        <path d="M80 207v100M130 220v87M180 232v75M230 244v63" stroke="#cfe0f7" stroke-width="1.5" opacity=".6"/>
+        <path d="M38 215v105M262 275v45" stroke="#6b7f73" stroke-width="7"/>
+        <!-- duct -->
+        <rect x="268" y="262" width="62" height="16" fill="#6da7e8"/>
+        <!-- frame + plenum -->
+        <rect x="318" y="288" width="140" height="10" fill="#aeb8b2"/>
+        <path d="M326 298v22M450 298v22" stroke="#6b7f73" stroke-width="7"/>
+        <!-- drying chamber -->
+        <rect x="334" y="150" width="108" height="138" rx="6" fill="#e9efe6"/>
+        <g stroke="#9bb0a2" stroke-width="1"><path d="M334 170h108M334 190h108M334 210h108M334 230h108M334 250h108M334 270h108M360 150v138M388 150v138M416 150v138"/></g>
+        <path d="M322 150 L388 92 L454 150Z" fill="#e0533d"/>
+        <rect x="379" y="58" width="18" height="36" fill="#9aa5a0"/>
+        <rect x="372" y="52" width="32" height="8" rx="3" fill="#7d8a84"/>
+        <!-- blower -->
+        <circle cx="492" cy="278" r="22" fill="#3a7bd5"/><circle cx="492" cy="278" r="9" fill="#14397a"/>
+        <rect x="458" y="270" width="12" height="16" fill="#6da7e8"/>
+        <!-- furnace -->
+        <rect x="528" y="232" width="92" height="88" rx="6" fill="#2b2f2c"/>
+        <rect x="540" y="264" width="28" height="34" rx="3" fill="#f08a24"/>
+        <rect x="578" y="150" width="18" height="82" fill="#9aa5a0"/>
+        <rect x="572" y="144" width="30" height="8" rx="3" fill="#7d8a84"/>
+        <path d="M514 278h14" stroke="#6da7e8" stroke-width="8"/>
+        <!-- air flow -->
+        <path class="flow" d="M60 180 L260 232 L330 270 L388 270" fill="none" stroke="#f9d56e" stroke-width="4" stroke-linecap="round"/>
+        <path class="flow alt" d="M570 262 L520 278 L470 278 L420 270" fill="none" stroke="#b9e14b" stroke-width="4" stroke-linecap="round" opacity=".85"/>
+        <path class="flow" d="M388 250 V120 V70" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".7"/>
+      </svg>
+      <figcaption>Aliran udara: kolektor surya atau tungku sekam, blower, plenum, karung gabah, lalu keluar lewat cerobong.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="wrap">
+    <div><strong>250 kg</strong><span>gabah per batch (3 karung)</span></div>
+    <div><strong>24% → 14%</strong><span>target kadar air</span></div>
+    <div><strong>40–50 °C</strong><span>suhu udara pengering</span></div>
+    <div><strong>12–20 jam</strong><span>target waktu kering</span></div>
+  </div>
+</div>
+
+<section id="masalah" class="problem">
+  <div class="wrap">
+    <div>
+      <h2>Petani panen, tapi cuaca menentukan mutu.</h2>
+      <p>Gabah basah yang terlambat dikeringkan mudah rusak, berjamur, dan harganya turun. Menjemur bergantung cuaca, sedangkan jasa pengeringan menambah biaya. Ketahanan pangan dimulai dari gabah yang selamat sampai ke penggilingan.</p>
+    </div>
+    <ul>
+      <li><b>Cuaca tidak menentu</b>Hujan dan mendung memperlambat pengeringan dan menurunkan mutu gabah.</li>
+      <li><b>Biaya jasa dryer tinggi</b>Jasa pengeringan sekitar Rp 700–1.000 per kg, memotong keuntungan petani.</li>
+      <li><b>Sekam padi terbuang</b>Limbah sekam sebenarnya bisa menjadi sumber panas cadangan yang murah.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="cara-kerja" class="how">
+  <div class="wrap">
+    <h2>Dua sumber panas, satu hasil yang stabil.</h2>
+    <p>HybriDRY memilih sumber panas sesuai cuaca. Damper dan sensor menjaga suhu udara pengering tetap di 40–50 °C.</p>
+
+    <div class="modes">
+      <article class="mode sunny">
+        <h3>Saat cerah: tenaga surya</h3>
+        <p>Sumber utama, tanpa bahan bakar.</p>
+        <ol>
+          <li>Udara masuk kolektor surya</li>
+          <li>Mengalir lewat duct udara panas</li>
+          <li>Masuk plenum</li>
+          <li>Menembus karung gabah</li>
+        </ol>
+      </article>
+      <article class="mode cloudy">
+        <h3>Saat mendung: tungku sekam</h3>
+        <p>Cadangan dari biomassa sekam padi.</p>
+        <ol>
+          <li>Tungku sekam memanaskan udara</li>
+          <li>Blower hemat energi 0,75 kW mengalirkan</li>
+          <li>Masuk plenum</li>
+          <li>Menembus karung gabah</li>
+        </ol>
+      </article>
+    </div>
+    <p class="note"><b>Uap air</b> keluar lewat cerobong ventilasi atas. Sensor suhu dan kadar air membaca kondisi gabah, sehingga pengeringan berhenti di target sekitar 14%, tanpa tebak-tebakan.</p>
+  </div>
+</section>
+
+<section id="simulasi" class="sim-sec">
+  <div class="wrap">
+    <h2>Coba simulasinya.</h2>
+    <p>Pilih cuaca, lalu mulai pengeringan. Perhatikan sumber panas berganti dan sensor menghentikan alat saat kadar air gabah mencapai 14%.</p>
+
+    <div class="sim-grid">
+      <figure class="sim-stage">
+        <svg id="scene" class="sunny" viewBox="0 0 720 400" role="img" aria-label="Simulasi HybriDRY: aliran udara panas, uap air, dan perubahan warna gabah">
+          <defs>
+            <pattern id="grains" width="9" height="7" patternUnits="userSpaceOnUse">
+              <ellipse cx="3" cy="3" rx="2.6" ry="1.4" fill="#6b4a12" opacity=".35"/>
+              <ellipse cx="7.5" cy="6" rx="2.6" ry="1.4" fill="#6b4a12" opacity=".3"/>
+            </pattern>
+          </defs>
+          <rect class="sky" width="720" height="350"/>
+          <rect width="720" height="50" y="350" fill="#7fbf6a"/>
+          <g id="sun"><circle cx="90" cy="72" r="30" fill="#f2b632"/><g stroke="#f2b632" stroke-width="5" stroke-linecap="round"><path d="M90 24v-10M90 130v-10M42 72H32M148 72h-10M56 38l-7-7M124 106l7 7M124 38l7-7M56 106l-7 7"/></g></g>
+          <g id="cloud" fill="#8e9c97"><ellipse cx="100" cy="76" rx="48" ry="22"/><ellipse cx="74" cy="64" rx="26" ry="20"/><ellipse cx="124" cy="62" rx="30" ry="22"/></g>
+
+          <!-- solar collector -->
+          <path d="M40 215 L300 280 L300 300 L40 235Z" fill="#1f4aa8"/>
+          <path d="M40 215 L300 280" stroke="#9db8f0" stroke-width="3"/>
+          <path d="M95 229v100M150 242v87M205 256v73M255 268v61" stroke="#cfe0f7" stroke-width="1.5" opacity=".6"/>
+          <path d="M48 235v115M290 300v50" stroke="#6b7f73" stroke-width="8"/>
+          <rect x="298" y="290" width="70" height="18" fill="#6da7e8"/>
+
+          <!-- frame -->
+          <rect x="350" y="318" width="160" height="10" fill="#aeb8b2"/>
+          <path d="M358 328v22M502 328v22" stroke="#6b7f73" stroke-width="8"/>
+
+          <!-- drying chamber -->
+          <rect x="366" y="170" width="118" height="148" rx="6" fill="#f3f6ef"/>
+          <rect id="grain" x="372" y="176" width="106" height="136" rx="4" fill="#a9b94a"/>
+          <rect x="372" y="176" width="106" height="136" rx="4" fill="url(#grains)"/>
+          <g stroke="#7d9486" stroke-width="1.2" opacity=".6"><path d="M366 192h118M366 212h118M366 232h118M366 252h118M366 272h118M366 292h118M395 170v148M425 170v148M455 170v148"/></g>
+          <rect x="366" y="170" width="118" height="148" rx="6" fill="none" stroke="#7d9486" stroke-width="2"/>
+          <circle id="led1" cx="381" cy="190" r="6" fill="#f2b632" stroke="#fff" stroke-width="2"/>
+          <circle id="led2" cx="469" cy="290" r="6" fill="#f2b632" stroke="#fff" stroke-width="2"/>
+
+          <!-- roof + chimney -->
+          <path d="M352 170 L425 108 L498 170Z" fill="#e0533d"/>
+          <rect x="416" y="68" width="18" height="42" fill="#9aa5a0"/>
+          <rect x="409" y="62" width="32" height="8" rx="3" fill="#7d8a84"/>
+
+          <!-- blower -->
+          <rect x="484" y="298" width="22" height="14" fill="#6da7e8"/>
+          <circle cx="534" cy="305" r="26" fill="#3a7bd5"/>
+          <g id="fan" transform-origin="534 305"><path d="M534 305v-20M534 305l17 10M534 305l-17 10" stroke="#14397a" stroke-width="5" stroke-linecap="round"/></g>
+          <rect x="558" y="298" width="32" height="14" fill="#6da7e8"/>
+
+          <!-- furnace -->
+          <rect x="588" y="258" width="112" height="92" rx="6" fill="#2b2f2c"/>
+          <rect x="602" y="292" width="34" height="42" rx="3" fill="#6b3b14"/>
+          <rect id="flame" x="602" y="292" width="34" height="42" rx="3" fill="#f08a24"/>
+          <rect x="656" y="170" width="20" height="90" fill="#9aa5a0"/>
+          <rect x="650" y="163" width="32" height="8" rx="3" fill="#7d8a84"/>
+
+          <!-- airflow -->
+          <g id="f-solar" class="flowgrp">
+            <path class="flow" d="M70 208 L290 266 L345 299 L425 299 L425 200" fill="none" stroke="#f2b632" stroke-width="5" stroke-linecap="round"/>
+          </g>
+          <g id="f-furn" class="flowgrp">
+            <path class="flow alt" d="M640 312 L592 305 L510 305 L440 299 L425 299 L425 200" fill="none" stroke="#e8672b" stroke-width="5" stroke-linecap="round"/>
+          </g>
+
+          <!-- vapor from top chimney -->
+          <g id="vapor" fill="#fff" opacity="0">
+            <circle class="puff" cx="425" cy="55" r="9"/>
+            <circle class="puff p2" cx="420" cy="55" r="7"/>
+            <circle class="puff p3" cx="431" cy="55" r="8"/>
+          </g>
+          <!-- smoke from furnace chimney -->
+          <g id="smoke" fill="#5d6a64" opacity="0">
+            <circle class="puff" cx="666" cy="155" r="9"/>
+            <circle class="puff p2" cx="662" cy="155" r="7"/>
+            <circle class="puff p3" cx="671" cy="155" r="8"/>
+          </g>
+          <text x="425" y="382" text-anchor="middle" font-size="13" fill="#3b5646" font-family="Figtree,sans-serif">3 karung gabah (±250 kg)</text>
+        </svg>
+      </figure>
+
+      <div class="sim-panel">
+        <div class="seg" role="group" aria-label="Pilih cuaca">
+          <button type="button" data-w="sunny" aria-pressed="true">Cerah</button>
+          <button type="button" data-w="cloudy" aria-pressed="false">Mendung</button>
+        </div>
+
+        <div class="readout">
+          <div class="moist">
+            <span class="lbl">Kadar air gabah</span>
+            <strong id="m-val">24,0%</strong>
+          </div>
+          <div class="bar"><i id="bar"></i><b title="Target 14%"></b></div>
+          <dl>
+            <div><dt>Suhu udara</dt><dd id="t-val">30 °C</dd></div>
+            <div><dt>Waktu</dt><dd id="h-val">0,0 jam</dd></div>
+            <div><dt>Sumber panas</dt><dd id="src">Surya</dd></div>
+          </dl>
+        </div>
+
+        <p id="status" class="status" aria-live="polite">Tekan Mulai untuk memasukkan 3 karung gabah dan menyalakan blower.</p>
+
+        <div class="ctrl">
+          <button type="button" class="btn primary" id="play">Mulai</button>
+          <button type="button" class="btn ghost-dark" id="reset">Ulang</button>
+          <div class="seg small" role="group" aria-label="Kecepatan simulasi">
+            <button type="button" data-s="1" aria-pressed="true">1×</button>
+            <button type="button" data-s="2" aria-pressed="false">2×</button>
+            <button type="button" data-s="4" aria-pressed="false">4×</button>
+          </div>
+        </div>
+        <p class="fine">Simulasi ilustrasi dari target rancangan: cerah ±12 jam, mendung ±20 jam. Cuaca bisa diganti saat berjalan. Hasil nyata menunggu uji lapangan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="keunggulan">
+  <div class="wrap">
+    <h2>Kenapa HybriDRY?</h2>
+    <div class="letters">
+      <div class="letter"><i>H</i><div><h3>Hemat biaya</h3><p>Estimasi biaya operasional sekitar Rp 500–1.000/kg, lebih rendah dari jasa dryer Rp 700–1.000/kg.</p></div></div>
+      <div class="letter"><i>Y</i><div><h3>Yakin kering</h3><p>Matahari sebagai energi utama, sekam sebagai cadangan, jadi gabah tetap kering saat mendung.</p></div></div>
+      <div class="letter"><i>B</i><div><h3>Bebas beban investasi</h3><p>Petani cukup memakai jasa (Rp 500–700/kg). Alat dikelola kelompok tani.</p></div></div>
+      <div class="letter"><i>R</i><div><h3>Ramah lingkungan</h3><p>Limbah sekam jadi energi, energi surya rendah emisi, abu sekam dapat dimanfaatkan.</p></div></div>
+      <div class="letter"><i>I</i><div><h3>Indikator otomatis</h3><p>Sensor mendeteksi kadar air dan menghentikan pengeringan di target (±14%).</p></div></div>
+      <div class="letter"><i>D</i><div><h3>Dijamin mutu gabah</h3><p>Gabah retak, menguning, dan berjamur berkurang, serta susut pascapanen menurun.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="spesifikasi" class="specs">
+  <div class="wrap">
+    <div>
+      <h2>Spesifikasi prototype awal.</h2>
+      <p>Dirancang sebagai rangkaian satu unit: kolektor surya, ruang pengering silinder bermesh, blower, dan tungku sekam terpisah dengan cerobong sendiri demi keamanan.</p>
+      <p class="disclaimer">Dimensi dan data kinerja adalah estimasi rancangan awal (Prototype V0, DWG SKM-ASSY-01-R0) dan wajib divalidasi lewat uji lapangan.</p>
+    </div>
+    <table>
+      <tr><th>Kapasitas</th><td>250 kg gabah / batch (3 karung)</td></tr>
+      <tr><th>Ruang pengering</th><td>Ø1000 × 1000 mm, mesh stainless</td></tr>
+      <tr><th>Kolektor surya</th><td>2000 × 1000 mm, kemiringan ±17°</td></tr>
+      <tr><th>Sumber panas</th><td>Surya (utama) + tungku sekam (cadangan)</td></tr>
+      <tr><th>Blower</th><td>0,75 kW, kipas hemat energi</td></tr>
+      <tr><th>Suhu udara</th><td>40–50 °C (damper + sensor)</td></tr>
+      <tr><th>Target kadar air</th><td>24% → 14%</td></tr>
+      <tr><th>Target waktu</th><td>12–20 jam (tergantung cuaca)</td></tr>
+      <tr><th>Dimensi total</th><td>± 5200 × 1100 × 2550 mm</td></tr>
+      <tr><th>Bahan utama</th><td>Besi hollow 40×40, plat galvanis, mesh SS304</td></tr>
+    </table>
+  </div>
+</section>
+
+<section id="komponen">
+  <div class="wrap">
+    <h2>Komponen utama.</h2>
+    <p>Tiap bagian punya nomor part dan dirakit dengan sambungan las serta baut M8.</p>
+    <div class="parts-grid">
+      <div class="part"><h3>Ruang pengering</h3><p>Dinding mesh, lantai perforasi, atap kerucut yang bisa dibuka untuk memasukkan karung.</p></div>
+      <div class="part"><h3>Kolektor udara surya</h3><p>Absorber hitam doff dengan rangka sendiri, miring ±17° menghadap matahari.</p></div>
+      <div class="part"><h3>Duct dan damper</h3><p>Dua damper mengatur campuran udara agar suhu pengering stabil.</p></div>
+      <div class="part"><h3>Blower hemat energi</h3><p>0,75 kW mendorong udara panas masuk plenum dan menembus gabah.</p></div>
+      <div class="part"><h3>Tungku sekam</h3><p>Cadangan saat mendung, dipasang terpisah dengan cerobong dan jarak aman.</p></div>
+      <div class="part"><h3>Panel kontrol dan sensor</h3><p>Dua sensor suhu dan kadar air, ditampilkan di panel kontrol.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="mitra" class="partners">
+  <div class="wrap">
+    <h2>Dibangun bersama ekosistem pertanian.</h2>
+    <p>HybriDRY dikembangkan dengan kolaborasi petani, penyedia teknologi, pemerintah, dan pendana.</p>
+    <div class="chips">
+      <span>Kelompok tani dan Gapoktan</span>
+      <span>Koperasi pertanian dan Koperasi Desa</span>
+      <span>Penggilingan padi</span>
+      <span>Dinas Pertanian</span>
+      <span>Perguruan tinggi dan laboratorium</span>
+      <span>Balai pengujian alat dan mesin pertanian</span>
+      <span>Program pendanaan inovasi mahasiswa</span>
+      <span>CSR perusahaan agribisnis</span>
+    </div>
+    <div class="sdg">
+      <div class="s8">SDG 8: Pekerjaan layak dan pertumbuhan ekonomi</div>
+      <div class="s12">SDG 12: Konsumsi dan produksi yang bertanggung jawab</div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Ingin mencoba atau berkolaborasi?</h2>
+    <p>Kami membuka kesempatan uji coba bersama kelompok tani, mitra teknologi, dan pendukung pendanaan.</p>
+    <div class="btns">
+      <a class="btn primary" href="mailto:hybridry@example.com">Hubungi tim</a>
+      <a class="btn ghost" href="#atas">Kembali ke atas</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Tim PKM HybriDRY</span>
+    <span>Pengering gabah hibrida untuk ketahanan pangan</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var scene=$('scene'),T={sunny:12,cloudy:20},HOUR=1.3;
+  var s={p:0,t:0,run:false,w:'sunny',speed:1,done:false,last:0,spin:0};
+  var wet=[169,185,74],dry=[227,181,74];
+  function mix(k){return 'rgb('+wet.map(function(a,i){return Math.round(a+(dry[i]-a)*k)}).join(',')+')'}
+  function fmt(n,d){return n.toFixed(d).replace('.',',')}
+
+  function render(){
+    var m=14+10*Math.pow(1-s.p,1.3);
+    if(s.done)m=14;
+    var active=s.run&&!s.done;
+    var temp;
+    if(s.done)temp=Math.max(30,44-(s.t-s.doneAt)*4);
+    else if(s.w==='sunny')temp=30+14*Math.min(1,s.t/2.5)+Math.sin(s.t*1.4)*1.3;
+    else temp=44+Math.sin(s.t*2)*1.1;
+    if(!s.run&&s.t===0)temp=30;
+    $('m-val').textContent=fmt(m,1)+'%';
+    $('bar').style.width=(s.p*100)+'%';
+    $('t-val').textContent=Math.round(temp)+' °C';
+    $('h-val').textContent=fmt(s.t,1)+' jam';
+    $('src').textContent=s.w==='sunny'?'Surya':'Tungku sekam';
+    $('grain').setAttribute('fill',mix(Math.min(1,s.p)));
+    scene.setAttribute('class',(s.w)+(active?' running':'')+(s.done?' done':''));
+    $('vapor').style.opacity=active?Math.min(.8,(m-14)/10*.9+.15):0;
+    $('smoke').style.opacity=active&&s.w==='cloudy'?.55:0;
+    $('flame').style.opacity=active&&s.w==='cloudy'?1:.15;
+    var led=s.done?'#2fa84f':'#f2b632';
+    $('led1').setAttribute('fill',led);$('led2').setAttribute('fill',led);
+    $('play').textContent=s.done?'Selesai':(s.run?'Jeda':(s.t>0?'Lanjut':'Mulai'));
+    $('play').disabled=s.done;
+    $('fan').setAttribute('transform','rotate('+s.spin+' 534 305)');
+    var st=$('status');
+    if(s.done)st.textContent='Kadar air 14% tercapai. Sensor menghentikan pengeringan dan blower dimatikan. Gabah siap digiling.';
+    else if(!s.run&&s.t===0)st.textContent='Tekan Mulai untuk memasukkan 3 karung gabah dan menyalakan blower.';
+    else if(!s.run)st.textContent='Dijeda. Tekan Lanjut untuk meneruskan pengeringan.';
+    else st.textContent=s.w==='sunny'?'Cerah: udara dipanaskan kolektor surya, lewat duct dan plenum, lalu menembus karung.':'Mendung: tungku sekam memanaskan udara, blower mengalirkannya ke plenum dan karung.';
+  }
+
+  function tick(now){
+    if(s.run&&!s.done){
+      var dt=Math.min(.1,(now-s.last)/1000);
+      var h=dt*s.speed/HOUR;
+      s.t+=h;s.p+=h/T[s.w];s.spin=(s.spin+dt*s.speed*500)%360;
+      if(s.p>=1){s.p=1;s.done=true;s.run=false;s.doneAt=s.t}
+      render();
+    }
+    s.last=now;
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+
+  $('play').onclick=function(){if(!s.done){s.run=!s.run;s.last=performance.now();render()}};
+  $('reset').onclick=function(){s.p=0;s.t=0;s.run=false;s.done=false;s.spin=0;render()};
+  Array.prototype.forEach.call(document.querySelectorAll('[data-w]'),function(b){
+    b.onclick=function(){
+      s.w=b.dataset.w;
+      Array.prototype.forEach.call(document.querySelectorAll('[data-w]'),function(x){x.setAttribute('aria-pressed',x===b)});
+      render();
+    };
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('[data-s]'),function(b){
+    b.onclick=function(){
+      s.speed=+b.dataset.s;
+      Array.prototype.forEach.call(document.querySelectorAll('[data-s]'),function(x){x.setAttribute('aria-pressed',x===b)});
+    };
+  });
+  render();
+})();
+</script>
+</body>
+</html>
